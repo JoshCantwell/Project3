@@ -34,8 +34,11 @@ class Permutations {
         int getNumberOfCities();
         int getNumberOfTours();
         int getNumberOfGenerations();
-        
+        int getMutationPercentage();
 
+        void BruteForce();
+        void setMutationPercentage(int mutationPercentage);
+        void RunProgram();
         void setNumberOfGenerations(int gens);
         void setNumberOfTours(int tours);
         void setNumberOfCities(int cities);
@@ -43,6 +46,10 @@ class Permutations {
 
     private:
 
+        int numberOfGenerations;
+        int numberOfTours;
+        int numberOfCities;
+        int mutationPercentage;
         double cities[20][20];
         std::ifstream distances;
 };
