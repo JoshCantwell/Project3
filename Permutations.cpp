@@ -21,64 +21,69 @@ void Permutations::BruteForce() {
    std::cout << "Optimal Cost: " << getFactorial(getNumberOfCities() - 1) << std::endl;
    
 
-   int permutations[getNumberOfCities() -1] = {};
-   int bestPermutations[getNumberOfCities() -1] = {};
+   int permutations[getNumberOfCities()] = {};
+   int bestPermutations[getNumberOfCities()] = {};
    double bestTour = 0;
    double tour = 0;
 
 
    double distances = 0;
+   
    for(int i =0; i < getNumberOfCities(); i++) {
 
        permutations[i] = i + 1;
 
 
    }
-  
+ 
+
    bestTour += cities[0][permutations[0]];
    for(int i=0; i<getNumberOfCities(); i++) {
 
        bestTour += cities[permutations[i-1]][permutations[i]];
    }
+  
+   //std::cout << "test" << std::endl;
    
-   bestTour += cities[permutations[getNumberOfCities()]][0];
-   
+   bestTour += cities[permutations[getNumberOfCities() - 1]][0];
    do {
 
        tour = 0;
       
        tour += cities[0][permutations[0]];
-       std::cout << cities[0][permutations[0]] << " + ";
+       //std::cout << cities[0][permutations[0]] << " + ";
        for(int i=1; i < getNumberOfCities(); i++) {
 
+         
            tour += cities[permutations[i-1]][permutations[i]];
-           std::cout << cities[permutations[i-1]][permutations[i]] << " + ";
+       //    std::cout << cities[permutations[i-1]][permutations[i]] << " + ";
            
        }
        
-       tour += cities[permutations[getNumberOfCities()]][0];
-       std::cout << cities[permutations[getNumberOfCities()]][0] << " = ";
-       for(int i =0;i < getNumberOfCities(); i++) {
+       tour += cities[permutations[getNumberOfCities()-1]][0];
+       //std::cout << cities[permutations[getNumberOfCities()]][0] << " = ";
+       /*for(int i =0;i < getNumberOfCities(); i++) {
            std::cout << permutations[i] << ' ';
 
-       }
+       }*/
        if(tour < bestTour) {
 
 
            bestTour = tour;
 
-           std::cout << "\nPermutations " ;
+           //std::cout << "\nPermutations " ;
            for(int i =0; i < getNumberOfCities();i++) {
 
                bestPermutations[i] = permutations[i];
-               std::cout << bestPermutations[i] << " ";
+               //std::cout << bestPermutations[i] << " ";
            }
+
            //std::memcpy(bestPermutations, permutations, sizeof(bestPermutations));
        }
 
    
-       std::cout << " = " << tour << std::endl;
-       std::cout << std::endl;
+       //std::cout << " = " << tour << std::endl;
+       //std::cout << std::endl;
    } while ( std::next_permutation(permutations, permutations+getNumberOfCities()));
 
 
@@ -87,14 +92,15 @@ void Permutations::BruteForce() {
    gettimeofday(t,NULL);
    std::cout << t->tv_sec - startSec << "seconds\n" << std::endl;;
 
-   for(int i=0; i <= getNumberOfCities()-1; i++) {
+   for(int i=0; i <= getNumberOfCities() - 1; i++) {
 
-       std::cout  << bestPermutations[i] << " ";
+       std::cout  << bestPermutations[i] << "  ";
 
 
    }
   
 
+   std::cout << "= ";
    std::cout << bestTour << std::endl;
    std::cout << std::endl;
 
