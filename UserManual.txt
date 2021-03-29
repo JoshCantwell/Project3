@@ -1,0 +1,40 @@
+=================================================================================
+=                                   User Manual                                 =
+=================================================================================
+=                                                                               =
+=       This Program trys solving the traveling salesman problem with two       =
+= different approaches. These two different approaches are a brute force and    =
+= a genetic algorithm approach. The differences being bruteforce takes N! time  =
+= to solve and genetic algorithm approach takes 2n time or n time. The genetic  =
+= Algorithm will get you an answer at way more efficiency once you start analyz-=
+= ing the time for 10 cities or more. However it doesnt get the best route, but =
+= a close approximation to the best route. The instructions to run this program =
+= are as follows. You will be asked to choose the number of cities youd like to =
+= run for the program, the number of generations to run in the GA program, The  =
+= number of tours per generation to run, and the percentage of mutations youd   =
+= like the next generations tour to have.                                       =
+=                                                                               =
+=    Sample Run:                                                                =
+=                                                                               =
+= How many cities would you like to run(between 1 and 20): 9                    =
+= How many tours per generation would you like: 100                             =
+= How many generations would you like to run: 100                               =
+= What percentage of the generation should be comprised of mutations: 20        =
+=                                                                               =
+=                                                                               =
+= --Brute Force Approach--                                                      =
+= cities: 9                                                                     =
+= Optimal Cost: 40320                                                           =
+= Time: 0seconds                                                                =
+=                                                                               =
+= 7  3  9  2  6  8  4  1  5  = 360.26                                           =
+=                                                                               =
+=                                                                               =
+=                                                                               =
+= --Genetic Algorithm Approach--                                                =
+= cities: 9                                                                     =
+= Optimal Cost: 10000                                                           =     
+= Time: 0seconds                                                                =
+=                                                                               =
+= 1 2 6 8 5 7 4 3 9 = 394.42                                                    =
+=================================================================================

@@ -19,14 +19,15 @@ class Permutations {
                     for(int j = 0; j <= 19; j++) {
                         if(i == j) {
                             cities[i][j] = 0;
-                            std::cout << std::setw(6) << cities[i][j] << " ";
+                            //std::cout << std::setw(6) << cities[i][j] << " ";
                         } else {
                             distances >> city;
                             cities[i][j] = city;
-                            std::cout << std::setw(6) << cities[i][j] << " ";
+                            //std::cout << std::setw(6) << cities[i][j] << " ";
                         }
                     }
-                    std::cout << std::endl;
+                    //std::cout << std::endl;
+
                 }
             }
         }
@@ -36,6 +37,7 @@ class Permutations {
         int getNumberOfGenerations();
         int getMutationPercentage();
 
+        void GeneticAlgorithm();
         void BruteForce();
         void setMutationPercentage(int mutationPercentage);
         void RunProgram();
