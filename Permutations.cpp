@@ -9,6 +9,8 @@
 #include <vector>
 void Permutations::BruteForce() {
 
+
+
     long i;
     struct timeval * t;
     t = (struct timeval *)malloc(sizeof(struct timeval));
@@ -26,6 +28,7 @@ void Permutations::BruteForce() {
    double bestTour = 0;
    double tour = 0;
 
+	
 
    double distances = 0;
    
@@ -36,16 +39,17 @@ void Permutations::BruteForce() {
 
    }
  
-
    bestTour += cities[0][permutations[0]];
-   for(int i=0; i<getNumberOfCities(); i++) {
+
+   
+   for(int i=1; i<getNumberOfCities(); i++) {
 
        bestTour += cities[permutations[i-1]][permutations[i]];
    }
   
-   //std::cout << "test" << std::endl;
    
    bestTour += cities[permutations[getNumberOfCities() - 1]][0];
+
    do {
 
        tour = 0;
@@ -126,7 +130,7 @@ void Permutations::GeneticAlgorithm() {
    double eliteone = 1000;
    double elitetwo = 1000;
 
-   
+    
 
    std::vector < std::vector<int> > tours;
 
